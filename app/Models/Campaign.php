@@ -55,4 +55,12 @@ final class Campaign extends Model
             foreignKey: 'campaign_id',
         );
     }
+
+    public function submissions(): HasMany
+    {
+        return $this->hasMany(
+            related: Submission::class,
+            foreignKey: 'campaign_id',
+        );
+    }
 }

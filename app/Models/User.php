@@ -72,4 +72,12 @@ final class User extends Authenticatable
             foreignKey: 'user_id',
         );
     }
+
+    public function submissions(): HasMany
+    {
+        return $this->hasMany(
+            related: Submission::class,
+            foreignKey: 'user_id',
+        );
+    }
 }
