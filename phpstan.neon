@@ -7,3 +7,5 @@ parameters:
         - app/
 
     level: 9
+
+    checkGenericClassInNonGenericObjectType: false

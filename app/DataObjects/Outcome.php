@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\DataObjects;
 
-final readonly  class Outcome
+final readonly class Outcome
 {
     /**
      * @param Positive $positive
@@ -13,17 +13,7 @@ final readonly  class Outcome
     public function __construct(
         public Positive $positive,
         public Negative $negative,
-    ) {}
-
-    /**
-     * @return array{positive:array{name:string,points:int},negative:array{name:string,points:int}}
-     */
-    public function toArray(): array
-    {
-        return [
-            'positive' => $this->positive->toArray(),
-            'negative' => $this->negative->toArray(),
-        ];
+    ) {
     }
 
     /**
@@ -40,5 +30,16 @@ final readonly  class Outcome
                 data: $data['negative'],
             ),
         );
+    }
+
+    /**
+     * @return array{positive:array{name:string,points:int},negative:array{name:string,points:int}}
+     */
+    public function toArray(): array
+    {
+        return [
+            'positive' => $this->positive->toArray(),
+            'negative' => $this->negative->toArray(),
+        ];
     }
 }

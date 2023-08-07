@@ -11,5 +11,6 @@ final readonly class Description
 {
     public function __construct(
         public string $value,
-    ) {}
+    ) {
+    }
 }

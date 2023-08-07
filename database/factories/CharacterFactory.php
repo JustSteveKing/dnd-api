@@ -6,6 +6,7 @@ namespace Database\Factories;
 
 use App\DataObjects\Stats;
 use App\Enums\CharacterClass;
+use App\Enums\CharacterRace;
 use App\Models\Character;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -18,9 +19,9 @@ final class CharacterFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'race' => $this->faker->word(),
+            'race' => CharacterRace::ELF,
             'class' => CharacterClass::FIGHTER,
-            'level' => $this->faker->numberBetween(0,100),
+            'level' => $this->faker->numberBetween(0, 100),
             'summary' => $this->faker->paragraphs(nb: 2, asText: true),
             'story' => $this->faker->paragraphs(nb: 5, asText: true),
             'stats' => Stats::fromArray(

@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Database\Factories;
 
-use App\DataObjects\Objective;
-use App\DataObjects\Outcome;
 use App\Enums\CampaignStatus;
 use App\Models\Campaign;
 use App\Models\Map;
@@ -22,14 +20,7 @@ final class CampaignFactory extends Factory
             'title' => $this->faker->words(asText: true),
             'status' => CampaignStatus::PLANNING,
             'storyline' => $this->faker->paragraphs(asText: true),
-            'objectives' => [
-                Objective::fromArray(
-                    data: [
-                        'name' => 'Complete Location',
-                        'points' => 100,
-                    ],
-                ),
-            ],
+            'objectives' => [],
             'progress' => 0,
             'map_id' => Map::factory(),
             'user_id' => User::factory(),

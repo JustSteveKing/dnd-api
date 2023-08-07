@@ -6,8 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class () extends Migration {
     public function up(): void
     {
         Schema::create('maps', static function (Blueprint $table): void {
@@ -15,6 +14,12 @@ return new class extends Migration
 
             $table->string('name');
             $table->text('description')->nullable();
+
+            $table
+                ->foreignUlid('user_id')
+                ->index()
+                ->constrained()
+                ->cascadeOnDelete();
 
             $table->timestamps();
         });

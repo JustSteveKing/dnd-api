@@ -27,24 +27,7 @@ final readonly class Stats
         public int $wisdom,
         public int $charisma,
         public int $mana,
-    ) {}
-
-    /**
-     * @return array{health:int,speed:int,strength:int,dexterity:int,constitution:int,intelligence:int,wisdom:int,charisma:int,mana:int}
-     */
-    public function toArray(): array
-    {
-        return [
-            'health' => $this->health,
-            'speed' => $this->speed,
-            'strength' => $this->strength,
-            'dexterity' => $this->dexterity,
-            'constitution' => $this->constitution,
-            'intelligence' => $this->intelligence,
-            'wisdom' => $this->wisdom,
-            'charisma' => $this->charisma,
-            'mana' => $this->mana,
-        ];
+    ) {
     }
 
     /**
@@ -64,5 +47,23 @@ final readonly class Stats
             charisma: $data['charisma'],
             mana: $data['mana'],
         );
+    }
+
+    /**
+     * @return array{health:int,speed:int,strength:int,dexterity:int,constitution:int,intelligence:int,wisdom:int,charisma:int,mana:int}
+     */
+    public function toArray(): array
+    {
+        return [
+            'health' => $this->health,
+            'speed' => $this->speed,
+            'strength' => $this->strength,
+            'dexterity' => $this->dexterity,
+            'constitution' => $this->constitution,
+            'intelligence' => $this->intelligence,
+            'wisdom' => $this->wisdom,
+            'charisma' => $this->charisma,
+            'mana' => $this->mana,
+        ];
     }
 }

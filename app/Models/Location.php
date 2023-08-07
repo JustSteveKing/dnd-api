@@ -20,6 +20,7 @@ final class Location extends Model
         'type',
         'description',
         'user_id',
+        'campaign_id',
     ];
 
     protected $casts = [
@@ -31,6 +32,14 @@ final class Location extends Model
         return $this->belongsTo(
             related: User::class,
             foreignKey: 'user_id',
+        );
+    }
+
+    public function campaign(): BelongsTo
+    {
+        return $this->belongsTo(
+            related: Campaign::class,
+            foreignKey: 'campaign_id',
         );
     }
 }

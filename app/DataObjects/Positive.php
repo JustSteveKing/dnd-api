@@ -13,17 +13,7 @@ final readonly class Positive
     public function __construct(
         public string $name,
         public int $points,
-    ) {}
-
-    /**
-     * @return array{name:string,points:int}
-     */
-    public function toArray(): array
-    {
-        return [
-            'name' => $this->name,
-            'points' => $this->points,
-        ];
+    ) {
     }
 
     /**
@@ -36,5 +26,16 @@ final readonly class Positive
             name: $data['name'],
             points: $data['points'],
         );
+    }
+
+    /**
+     * @return array{name:string,points:int}
+     */
+    public function toArray(): array
+    {
+        return [
+            'name' => $this->name,
+            'points' => $this->points,
+        ];
     }
 }

@@ -7,6 +7,7 @@ namespace App\Enums\Attributes;
 use Attribute;
 
 #[Attribute]
-final class Uncommon
+final class Facility
 {
+    //
 }
