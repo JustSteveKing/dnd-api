@@ -6,6 +6,7 @@ namespace App\Models;
 
 use App\Enums\CharacterClass;
 use App\Enums\CharacterRace;
+use App\Models\Dispatchables\CharacterCreated;
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -32,6 +33,10 @@ final class Character extends Model
         'race' => CharacterRace::class,
         'class' => CharacterClass::class,
         'stats' => AsArrayObject::class,
+    ];
+
+    protected $dispatchesEvents = [
+        'created' => CharacterCreated::class,
     ];
 
     public function user(): BelongsTo
