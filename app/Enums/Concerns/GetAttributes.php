@@ -16,7 +16,7 @@ trait GetAttributes
      * @param BackedEnum $enum
      * @return string
      */
-    private static function description(BackedEnum $enum): string
+    public static function description(BackedEnum $enum): string
     {
         $reflection = new ReflectionClassConstant(
             class: self::class,
@@ -39,7 +39,7 @@ trait GetAttributes
      * @param BackedEnum $enum
      * @return string
      */
-    private static function media(BackedEnum $enum): string
+    public static function media(BackedEnum $enum): string
     {
         $reflection = new ReflectionClassConstant(
             class: self::class,

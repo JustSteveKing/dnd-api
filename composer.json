@@ -10,9 +10,11 @@
   "require": {
     "php": "^8.2",
     "guzzlehttp/guzzle": "^7.7",
+    "juststeveking/sdk-tools": "^0.0.5",
     "laravel/framework": "^10.17.1",
     "laravel/sanctum": "^3.2.5",
-    "laravel/tinker": "^2.8.1"
+    "laravel/tinker": "^2.8.1",
+    "timacdonald/json-api": "v1.0.0-beta.4"
   },
   "require-dev": {
     "fakerphp/faker": "^1.23.0",

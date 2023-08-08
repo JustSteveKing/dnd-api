@@ -10,9 +10,12 @@ use App\Enums\Attributes\Magic;
 use App\Enums\Attributes\Media;
 use App\Enums\Attributes\Rogue;
 use App\Enums\Attributes\Warrior;
+use App\Enums\Concerns\GetAttributes;
 
 enum CharacterClass: string
 {
+    use GetAttributes;
+
     #[Warrior]
     #[Media('/class/fighter.png')]
     #[Description('Versatile warriors skilled in combat and the use of armor and weapons. They can specialize in various fighting styles.')]

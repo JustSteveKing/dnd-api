@@ -11,9 +11,12 @@ use App\Enums\Attributes\Media;
 use App\Enums\Attributes\Natural;
 use App\Enums\Attributes\Planar;
 use App\Enums\Attributes\Urban;
+use App\Enums\Concerns\GetAttributes;
 
 enum LocationType: string
 {
+    use GetAttributes;
+
     #[Natural]
     #[Media('/locations/forest.png')]
     #[Description('Ranging from light woods to impenetrable, dark, and enchanted forests.')]

@@ -9,9 +9,12 @@ use App\Enums\Attributes\Description;
 use App\Enums\Attributes\Expanded;
 use App\Enums\Attributes\Media;
 use App\Enums\Attributes\Uncommon;
+use App\Enums\Concerns\GetAttributes;
 
 enum CharacterRace: string
 {
+    use GetAttributes;
+
     #[Common]
     #[Media('/race/human.png')]
     #[Description('Versatile and adaptable, humans are often seen as the "standard" race, with a broad range of capabilities and diverse cultures.')]
