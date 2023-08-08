@@ -2,25 +2,25 @@
 
 declare(strict_types=1);
 
-use App\Enums\CharacterClass;
-use App\Enums\CharacterRace;
+use App\Enums\MonsterType;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class () extends Migration {
+return new class extends Migration
+{
     public function up(): void
     {
-        Schema::create('characters', static function (Blueprint $table): void {
+        Schema::create('monsters', static function (Blueprint $table): void {
             $table->ulid('id')->primary();
 
             $table->string('name');
-            $table->string('race')->default(CharacterRace::HUMAN->value);
-            $table->string('class')->default(CharacterClass::FIGHTER->value);
-            $table->unsignedInteger('level')->default(1);
+            $table->string('type')->default(MonsterType::HUMANOID->value);
 
             $table->text('summary')->nullable();
             $table->text('story')->nullable();
+
+            $table->unsignedInteger('level')->default(1);
 
             $table->json('stats')->nullable();
 
@@ -36,6 +36,6 @@ return new class () extends Migration {
 
     public function down(): void
     {
-        Schema::dropIfExists('characters');
+        Schema::dropIfExists('monsters');
     }
 };

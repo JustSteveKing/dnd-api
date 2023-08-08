@@ -165,30 +165,37 @@ enum LocationType: string
     case ELEMENTAL_REALM = 'elemental realm';
 
     #[Planar]
+    #[Media('/locations/shadow-realm.png')]
     #[Description('Ghostly dimensions overlapping the mortal world.')]
     case SHADOW_REALM = 'shadow realm';
 
     #[Planar]
+    #[Media('/locations/eldritch-realm.png')]
     #[Description('Places that defy natural laws, possibly driven by madness.')]
     case ELDRITCH_REALM = 'eldritch realm';
 
     #[Facility]
+    #[Media('/locations/mine.png')]
     #[Description('Dug for resources but often fraught with danger.')]
     case MINE = 'mine';
 
     #[Facility]
+    #[Media('/locations/prison.png')]
     #[Description('Holding criminals, monsters, or secrets.')]
     case PRISON = 'prison';
 
     #[Facility]
+    #[Media('/locations/dungeon.png')]
     #[Description('Holding criminals, monsters, or secrets.')]
     case DUNGEON = 'dungeon';
 
     #[Facility]
+    #[Media('/locations/laboratory.png')]
     #[Description('Places of experimentation, magic or technological research.')]
     case LABORATORY = 'laboratory';
 
     #[Facility]
+    #[Media('/locations/factory.png')]
     #[Description('Producing goods, possibly using dark magic or enslaved labor.')]
     case FACTORY = 'factory';
 }

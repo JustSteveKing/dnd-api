@@ -80,4 +80,12 @@ final class User extends Authenticatable
             foreignKey: 'user_id',
         );
     }
+
+    public function monsters(): HasMany
+    {
+        return $this->hasMany(
+            related: Monster::class,
+            foreignKey: 'user_id',
+        );
+    }
 }
