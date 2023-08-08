@@ -9,6 +9,7 @@ use App\Models\Character;
 use App\Models\Item;
 use App\Models\Location;
 use App\Models\Map;
+use App\Models\Monster;
 use App\Models\Submission;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -35,5 +36,7 @@ final class DatabaseSeeder extends Seeder
         Character::factory()->count(10)->create();
 
         Submission::factory()->for($campaign)->count(10)->create();
+
+        Monster::factory()->for($user)->count(10)->create();
     }
 }
