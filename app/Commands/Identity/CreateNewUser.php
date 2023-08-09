@@ -16,7 +16,8 @@ final readonly class CreateNewUser
      */
     public function __construct(
         private DatabaseManager $database,
-    ) {}
+    ) {
+    }
 
     /**
      * @param NewUser $payload

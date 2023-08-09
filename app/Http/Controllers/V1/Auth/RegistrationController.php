@@ -15,7 +15,8 @@ final readonly class RegistrationController
 {
     public function __construct(
         private IdentityService $service
-    ) {}
+    ) {
+    }
 
     /**
      * @param RegistrationRequest $request

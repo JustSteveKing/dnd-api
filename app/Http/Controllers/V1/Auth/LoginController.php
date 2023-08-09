@@ -19,7 +19,8 @@ final readonly class LoginController
      */
     public function __construct(
         private IdentityService $service,
-    ) {}
+    ) {
+    }
 
     /**
      * @param LoginRequest $request

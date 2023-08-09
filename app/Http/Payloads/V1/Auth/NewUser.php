@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\Payloads\V1\Auth;
 
-use App\Models\User;
 use Laravel\Sanctum\NewAccessToken;
 
 final class NewUser
@@ -22,7 +21,21 @@ final class NewUser
         private readonly string $password,
         public null|string $user = null,
         public null|NewAccessToken $token = null,
-    ) {}
+    ) {
+    }
+
+    /**
+     * @param array{name:string,email:string,password:string} $data
+     * @return NewUser
+     */
+    public static function fromArray(array $data): NewUser
+    {
+        return new NewUser(
+            name: $data['name'],
+            email: $data['email'],
+            password: $data['password'],
+        );
+    }
 
     public function user(string $id): NewUser
     {
@@ -41,18 +54,5 @@ final class NewUser
             'email' => $this->email,
             'password' => $this->password,
         ];
-    }
-
-    /**
-     * @param array{name:string,email:string,password:string} $data
-     * @return NewUser
-     */
-    public static function fromArray(array $data): NewUser
-    {
-        return new NewUser(
-            name: $data['name'],
-            email: $data['email'],
-            password: $data['password'],
-        );
     }
 }

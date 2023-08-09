@@ -26,7 +26,7 @@ trait GetAttributes
             name: Description::class,
         );
 
-        if (count($attributes) === 0) {
+        if (0 === count($attributes)) {
             return Str::headline(
                 value: $enum->value,
             );
@@ -49,7 +49,7 @@ trait GetAttributes
             name: Media::class,
         );
 
-        if (count($attributes) === 0) {
+        if (0 === count($attributes)) {
             return Str::headline(
                 value: $enum->value,
             );

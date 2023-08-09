@@ -11,7 +11,7 @@ final class CharacterCreated
 {
     public function __construct(Character $character)
     {
-        if (! $character->stats) {
+        if ( ! $character->stats) {
             $character->update([
                 'stats' => Stats::default(),
             ]);

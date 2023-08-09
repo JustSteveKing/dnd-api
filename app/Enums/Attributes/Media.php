@@ -11,5 +11,6 @@ final readonly class Media
 {
     public function __construct(
         public string $value,
-    ) {}
+    ) {
+    }
 }

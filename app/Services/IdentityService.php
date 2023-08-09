@@ -20,7 +20,8 @@ final readonly class IdentityService
     public function __construct(
         private CreateNewUser $user,
         private CreateTokenForUser $token,
-    ) {}
+    ) {
+    }
 
     /**
      * @param NewUser $payload

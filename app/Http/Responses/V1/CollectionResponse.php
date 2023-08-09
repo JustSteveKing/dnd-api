@@ -15,7 +15,8 @@ final readonly class CollectionResponse implements Responsable
     public function __construct(
         private JsonApiResourceCollection $data,
         private Status $status = Status::OK,
-    ) {}
+    ) {
+    }
 
     public function toResponse($request): JsonResponse
     {

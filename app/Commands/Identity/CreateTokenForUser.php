@@ -13,7 +13,8 @@ final readonly class CreateTokenForUser
 {
     public function __construct(
         private DatabaseManager $database,
-    ) {}
+    ) {
+    }
 
     /**
      * @param User $user

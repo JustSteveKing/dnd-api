@@ -13,7 +13,8 @@ final readonly class FileResponse implements Responsable
     public function __construct(
         private string $path,
         private Status $status = Status::OK,
-    ) {}
+    ) {
+    }
 
     public function toResponse($request): BinaryFileResponse
     {
